@@ -86,9 +86,24 @@
 
 // testPro()
 
-function rr (){
-  setTimeout(()=>console.log('Rania'), 4000)
+// function rr (){
+//   setTimeout(()=>console.log('Rania'), 4000)
+// }
+
+
+// rr()
+
+// EXERCICE 1
+
+var attente=()=> new Promise((resolve)=> setTimeout(resolve, 2000))
+
+var t = [2,8,5,9,4]
+
+const iterateWithAsyncAwait=async(tab)=>{
+    for (let i = 0; i < tab.length; i++) {       
+        console.log(tab[i])
+        await attente()
+    }
 }
 
-
-rr()
+iterateWithAsyncAwait(t)
